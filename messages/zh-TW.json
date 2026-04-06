@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "首頁",
+    "about": "關於老師",
+    "faq": "常見問題",
+    "contact": "預約諮詢",
+    "classes": "我的課程",
+    "signIn": "登入",
+    "signOut": "登出",
+    "languageLabel": "語言"
+  },
+  "home": {
+    "headline": "為年輕學習者打造的普通話中文課",
+    "subheadline": "小班制、溫暖的社群，以及讓學習感覺像回家一樣的老師。",
+    "cta": "預約諮詢",
+    "teacherTeaserLabel": "認識老師",
+    "learnMore": "進一步了解王老師"
+  },
+  "about": {
+    "title": "關於王老師",
+    "bioHeading": "用心教學",
+    "credentialsHeading": "資歷與經驗",
+    "philosophyHeading": "教學理念"
+  },
+  "faq": {
+    "title": "常見問題",
+    "subtitle": "家長在報名前最常問的問題。"
+  },
+  "contact": {
+    "title": "預約諮詢",
+    "subtitle": "告訴我們您的家庭情況，我們將在 2 個工作日內與您聯繫。",
+    "parentNameLabel": "家長姓名",
+    "parentNamePlaceholder": "王小明",
+    "parentEmailLabel": "電子郵件",
+    "parentEmailPlaceholder": "example@email.com",
+    "parentPhoneLabel": "電話號碼",
+    "parentPhonePlaceholder": "(02) 1234-5678",
+    "childNameLabel": "孩子姓名",
+    "childNamePlaceholder": "小明",
+    "childGradeLabel": "目前年級",
+    "childGradePlaceholder": "選擇年級",
+    "messageLabel": "其他備註（選填）",
+    "messagePlaceholder": "中文學習經驗、時間限制、其他問題…",
+    "submitButton": "送出申請",
+    "submitting": "送出中…",
+    "successTitle": "申請已收到！",
+    "successMessage": "謝謝您！我們會盡快與您聯繫。",
+    "errorTitle": "發生錯誤",
+    "errorMessage": "請再試一次或直接發送電子郵件給我們。",
+    "grades": {
+      "k": "幼兒園",
+      "1": "一年級",
+      "2": "二年級",
+      "3": "三年級",
+      "4": "四年級",
+      "5": "五年級",
+      "6plus": "六年級或以上"
+    }
+  },
+  "classes": {
+    "title": "課程時間表",
+    "subtitle": "歡迎回來！以下是您的課程詳情。",
+    "zoomLabel": "加入 Zoom",
+    "classroomLabel": "開啟 Google Classroom",
+    "scheduleHeading": "每週課程表",
+    "saturdayLabel": "星期六",
+    "sundayLabel": "星期日",
+    "timeRange": "上午 9:00 – 下午 12:00"
+  },
+  "banner": {
+    "dismiss": "關閉",
+    "dismissAriaLabel": "關閉公告"
+  },
+  "auth": {
+    "signInTitle": "登入",
+    "signInPrompt": "請登入以查看課程時間表和資源。"
+  },
+  "footer": {
+    "tagline": "為 K–5 學生提供普通話中文課程。",
+    "copyright": "王老師中文班。版權所有。"
+  },
+  "common": {
+    "loading": "載入中…",
+    "back": "返回",
+    "learnMore": "了解更多"
+  }
+}

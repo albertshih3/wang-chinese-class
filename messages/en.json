@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Request Consultation",
+    "classes": "My Classes",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "languageLabel": "Language"
+  },
+  "home": {
+    "headline": "Mandarin Chinese for Young Learners",
+    "subheadline": "Small classes, warm community, and a teacher who makes learning feel like home.",
+    "cta": "Request a Consultation",
+    "teacherTeaserLabel": "Meet the Teacher",
+    "learnMore": "Learn more about Wang Laoshi"
+  },
+  "about": {
+    "title": "About Wang Laoshi",
+    "bioHeading": "Teaching with Heart",
+    "credentialsHeading": "Credentials & Experience",
+    "philosophyHeading": "Teaching Philosophy"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything families want to know before enrolling."
+  },
+  "contact": {
+    "title": "Request a Consultation",
+    "subtitle": "Tell us about your family and we'll be in touch within 2 business days.",
+    "parentNameLabel": "Parent / Guardian Name",
+    "parentNamePlaceholder": "Jane Smith",
+    "parentEmailLabel": "Email Address",
+    "parentEmailPlaceholder": "jane@example.com",
+    "parentPhoneLabel": "Phone Number",
+    "parentPhonePlaceholder": "(555) 123-4567",
+    "childNameLabel": "Child's Name",
+    "childNamePlaceholder": "Alex",
+    "childGradeLabel": "Current Grade",
+    "childGradePlaceholder": "Select a grade",
+    "messageLabel": "Anything else we should know? (optional)",
+    "messagePlaceholder": "Prior Mandarin experience, scheduling constraints, questions…",
+    "submitButton": "Send Request",
+    "submitting": "Sending…",
+    "successTitle": "Request received!",
+    "successMessage": "Thank you! We'll be in touch soon.",
+    "errorTitle": "Something went wrong",
+    "errorMessage": "Please try again or email us directly.",
+    "grades": {
+      "k": "Kindergarten",
+      "1": "1st Grade",
+      "2": "2nd Grade",
+      "3": "3rd Grade",
+      "4": "4th Grade",
+      "5": "5th Grade",
+      "6plus": "6th Grade or above"
+    }
+  },
+  "classes": {
+    "title": "Class Schedule",
+    "subtitle": "Welcome back! Here are your class details.",
+    "zoomLabel": "Join Zoom",
+    "classroomLabel": "Open Google Classroom",
+    "scheduleHeading": "Weekly Schedule",
+    "saturdayLabel": "Saturday",
+    "sundayLabel": "Sunday",
+    "timeRange": "9:00 AM – 12:00 PM"
+  },
+  "banner": {
+    "dismiss": "Dismiss",
+    "dismissAriaLabel": "Dismiss announcement"
+  },
+  "auth": {
+    "signInTitle": "Sign In",
+    "signInPrompt": "Sign in to access your class schedule and resources."
+  },
+  "footer": {
+    "tagline": "Mandarin Chinese classes for K–5 learners.",
+    "copyright": "Wang Laoshi Chinese Class. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading…",
+    "back": "Back",
+    "learnMore": "Learn more"
+  }
+}
