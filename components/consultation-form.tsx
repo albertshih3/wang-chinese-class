@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
@@ -46,6 +47,10 @@ export function ConsultationForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Request failed");
+      sendGAEvent("event", "generate_lead", {
+        event_category: "Consultation",
+        event_label: "Consultation Form Submit",
+      });
       setStatus("success");
       reset();
     } catch {

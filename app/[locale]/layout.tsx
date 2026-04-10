@@ -11,6 +11,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { AnnouncementBanner } from "@/components/announcement-banner";
 import { sanityFetch } from "@/lib/sanity";
 import { cn } from "@/lib/utils";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const lora = Lora({ subsets: ["latin"], variable: "--font-serif" });
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -98,6 +99,9 @@ export default async function LocaleLayout({
             <SiteFooter siteName={siteName} />
           </NextIntlClientProvider>
         </body>
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
       </html>
     </ClerkProvider>
   );
