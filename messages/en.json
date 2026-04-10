@@ -7,28 +7,55 @@
     "classes": "My Classes",
     "signIn": "Sign In",
     "signOut": "Sign Out",
-    "languageLabel": "Language"
+    "languageLabel": "Language",
+    "myAccount": "My Account"
   },
   "home": {
     "headline": "Mandarin Chinese for Young Learners",
     "subheadline": "Small classes, warm community, and a teacher who makes learning feel like home.",
     "cta": "Request a Consultation",
     "teacherTeaserLabel": "Meet the Teacher",
-    "learnMore": "Learn more about Wang Laoshi"
+    "learnMore": "Learn more about Wang Laoshi",
+    "readyHeading": "Ready to get started?",
+    "readyBody": "Fill out a short form and we'll reach out as soon as possible to answer your questions.",
+    "features": {
+      "smallClass": {
+        "title": "Small Class Sizes",
+        "body": "Every child gets individual attention in our intimate group setting."
+      },
+      "weekend": {
+        "title": "Weekend Sessions",
+        "body": "Saturday or Sunday mornings, 9 AM–12 PM — one session per week, designed for busy families."
+      },
+      "curriculum": {
+        "title": "K–5 Curriculum",
+        "body": "Age-appropriate lessons that build confidence alongside vocabulary."
+      }
+    }
   },
   "about": {
     "title": "About Wang Laoshi",
+    "eyebrow": "About",
     "bioHeading": "Teaching with Heart",
+    "bioSubheading": "A Lifetime of Teaching Chinese",
     "credentialsHeading": "Credentials & Experience",
-    "philosophyHeading": "Teaching Philosophy"
+    "educationHeading": "Education & Experience",
+    "philosophyHeading": "Teaching Philosophy",
+    "specialtiesHeading": "Specialties",
+    "textbooksLabel": "Textbooks Used"
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Everything families want to know before enrolling."
+    "eyebrow": "FAQ",
+    "subtitle": "Everything families want to know before enrolling.",
+    "noQuestionPrefix": "Don't see your question?",
+    "reachOutLink": "Reach out directly."
   },
   "contact": {
     "title": "Request a Consultation",
-    "subtitle": "Tell us about your family and we'll be in touch within 2 business days.",
+    "eyebrow": "Get in touch",
+    "subtitle": "Tell us about your family and we'll be in touch as soon as possible.",
+    "subtitleFull": "Fill out the form below and Wang Laoshi will be in touch as soon as possible. No commitment required.",
     "parentNameLabel": "Parent / Guardian Name",
     "parentNamePlaceholder": "Jane Smith",
     "parentEmailLabel": "Email Address",
@@ -39,12 +66,15 @@
     "childNamePlaceholder": "Alex",
     "childGradeLabel": "Current Grade",
     "childGradePlaceholder": "Select a grade",
-    "messageLabel": "Anything else we should know? (optional)",
+    "messageLabel": "Anything else we should know?",
+    "optionalSuffix": "(optional)",
     "messagePlaceholder": "Prior Mandarin experience, scheduling constraints, questions…",
+    "parentGuardianLegend": "Parent / Guardian",
+    "childLegend": "Child",
     "submitButton": "Send Request",
     "submitting": "Sending…",
     "successTitle": "Request received!",
-    "successMessage": "Thank you! We'll be in touch soon.",
+    "successMessage": "Thank you! Wang Laoshi will be in touch as soon as possible.",
     "errorTitle": "Something went wrong",
     "errorMessage": "Please try again or email us directly.",
     "grades": {
@@ -59,13 +89,21 @@
   },
   "classes": {
     "title": "Class Schedule",
+    "eyebrow": "Enrolled Families",
     "subtitle": "Welcome back! Here are your class details.",
+    "description": "Classes run every Saturday and Sunday. Use the links below to join Zoom and access Google Classroom.",
     "zoomLabel": "Join Zoom",
+    "joinZoom": "Join Zoom Class",
     "classroomLabel": "Open Google Classroom",
+    "openClassroom": "Open Google Classroom",
     "scheduleHeading": "Weekly Schedule",
     "saturdayLabel": "Saturday",
     "sundayLabel": "Sunday",
-    "timeRange": "9:00 AM – 12:00 PM"
+    "timeRange": "9:00 AM – 12:00 PM",
+    "weeklyBadge": "Weekly",
+    "period1": "Period 1",
+    "period2": "Period 2",
+    "break": "Break"
   },
   "banner": {
     "dismiss": "Dismiss",

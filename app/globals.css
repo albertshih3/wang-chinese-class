@@ -2,6 +2,43 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* ── Animation keyframes ─────────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-2px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@layer utilities {
+  .animate-fade-up    { animation: fade-up    0.75s cubic-bezier(0.25, 1, 0.5, 1) both; }
+  .animate-fade-in    { animation: fade-in    0.65s cubic-bezier(0.25, 1, 0.5, 1) both; }
+  .animate-slide-down { animation: slide-down 0.55s cubic-bezier(0.25, 1, 0.5, 1) both; }
+  .animate-char-fill  { animation: char-fill  2s ease-in-out infinite alternate; }
+}
+
+@keyframes char-fill {
+  0% { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(0 100%, 100% 100%, 100% 0%, 0 0%); }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slide-down {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

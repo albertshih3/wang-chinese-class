@@ -7,28 +7,55 @@
     "classes": "我的課程",
     "signIn": "登入",
     "signOut": "登出",
-    "languageLabel": "語言"
+    "languageLabel": "語言",
+    "myAccount": "我的帳號"
   },
   "home": {
     "headline": "為年輕學習者打造的普通話中文課",
     "subheadline": "小班制、溫暖的社群，以及讓學習感覺像回家一樣的老師。",
     "cta": "預約諮詢",
     "teacherTeaserLabel": "認識老師",
-    "learnMore": "進一步了解王老師"
+    "learnMore": "進一步了解王老師",
+    "readyHeading": "準備好開始了嗎？",
+    "readyBody": "填寫一份簡短的表格，我們將在 2 個工作日內與您聯繫解答問題。",
+    "features": {
+      "smallClass": {
+        "title": "小班制教學",
+        "body": "親密的小組環境，每位孩子都能獲得個別關注。"
+      },
+      "weekend": {
+        "title": "週末課程",
+        "body": "週六或週日上午 9 點至 12 點，每週一次，專為繁忙家庭設計。"
+      },
+      "curriculum": {
+        "title": "K–5 課程",
+        "body": "適齡教學，在建立詞彙的同時培養學習自信。"
+      }
+    }
   },
   "about": {
     "title": "關於王老師",
+    "eyebrow": "關於",
     "bioHeading": "用心教學",
+    "bioSubheading": "一生的教學熱情",
     "credentialsHeading": "資歷與經驗",
-    "philosophyHeading": "教學理念"
+    "educationHeading": "學歷與經歷",
+    "philosophyHeading": "教學理念",
+    "specialtiesHeading": "專長",
+    "textbooksLabel": "使用教材"
   },
   "faq": {
     "title": "常見問題",
-    "subtitle": "家長在報名前最常問的問題。"
+    "eyebrow": "常見問題",
+    "subtitle": "家長在報名前最常問的問題。",
+    "noQuestionPrefix": "沒有看到您的問題？",
+    "reachOutLink": "直接聯絡我們。"
   },
   "contact": {
     "title": "預約諮詢",
+    "eyebrow": "聯絡我們",
     "subtitle": "告訴我們您的家庭情況，我們將在 2 個工作日內與您聯繫。",
+    "subtitleFull": "請填寫以下表格，王老師將在 2 個工作日內與您聯繫。無需任何承諾。",
     "parentNameLabel": "家長姓名",
     "parentNamePlaceholder": "王小明",
     "parentEmailLabel": "電子郵件",
@@ -39,12 +66,15 @@
     "childNamePlaceholder": "小明",
     "childGradeLabel": "目前年級",
     "childGradePlaceholder": "選擇年級",
-    "messageLabel": "其他備註（選填）",
+    "messageLabel": "其他備註",
+    "optionalSuffix": "（選填）",
     "messagePlaceholder": "中文學習經驗、時間限制、其他問題…",
+    "parentGuardianLegend": "家長 / 監護人",
+    "childLegend": "孩子",
     "submitButton": "送出申請",
     "submitting": "送出中…",
     "successTitle": "申請已收到！",
-    "successMessage": "謝謝您！我們會盡快與您聯繫。",
+    "successMessage": "謝謝您！王老師將在 2 個工作日內與您聯繫。",
     "errorTitle": "發生錯誤",
     "errorMessage": "請再試一次或直接發送電子郵件給我們。",
     "grades": {
@@ -59,13 +89,21 @@
   },
   "classes": {
     "title": "課程時間表",
+    "eyebrow": "已報名家庭",
     "subtitle": "歡迎回來！以下是您的課程詳情。",
+    "description": "每週六及週日均有課程。請使用以下連結加入 Zoom 並存取 Google Classroom。",
     "zoomLabel": "加入 Zoom",
+    "joinZoom": "加入 Zoom 課程",
     "classroomLabel": "開啟 Google Classroom",
+    "openClassroom": "開啟 Google Classroom",
     "scheduleHeading": "每週課程表",
     "saturdayLabel": "星期六",
     "sundayLabel": "星期日",
-    "timeRange": "上午 9:00 – 下午 12:00"
+    "timeRange": "上午 9:00 – 下午 12:00",
+    "weeklyBadge": "每週",
+    "period1": "第一節",
+    "period2": "第二節",
+    "break": "休息"
   },
   "banner": {
     "dismiss": "關閉",

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { consultationSchema, type ConsultationInput } from "@/lib/consultation-schema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,19 +19,12 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CheckCircle2, AlertCircle } from "lucide-react";
 
-const GRADES = [
-  { value: "k", label: "Kindergarten" },
-  { value: "1", label: "1st Grade" },
-  { value: "2", label: "2nd Grade" },
-  { value: "3", label: "3rd Grade" },
-  { value: "4", label: "4th Grade" },
-  { value: "5", label: "5th Grade" },
-  { value: "6plus", label: "6th Grade or above" },
-] as const;
+const GRADE_KEYS = ["k", "1", "2", "3", "4", "5", "6plus"] as const;
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function ConsultationForm() {
+  const t = useTranslations("contact");
   const [status, setStatus] = useState<Status>("idle");
 
   const {
@@ -64,10 +58,10 @@ export function ConsultationForm() {
       <Alert className="border-green-200 bg-green-50 dark:border-green-900 dark:bg-green-950/30">
         <CheckCircle2 className="size-4 text-green-600 dark:text-green-400" />
         <AlertTitle className="font-heading text-green-800 dark:text-green-300">
-          Request received!
+          {t("successTitle")}
         </AlertTitle>
         <AlertDescription className="font-sans text-green-700 dark:text-green-400">
-          Thank you! Wang Laoshi will be in touch within 2 business days.
+          {t("successMessage")}
         </AlertDescription>
       </Alert>
     );
@@ -78,9 +72,9 @@ export function ConsultationForm() {
       {status === "error" && (
         <Alert role="alert" className="border-destructive/30 bg-destructive/5">
           <AlertCircle className="size-4 text-destructive" aria-hidden="true" />
-          <AlertTitle className="font-heading">Something went wrong</AlertTitle>
+          <AlertTitle className="font-heading">{t("errorTitle")}</AlertTitle>
           <AlertDescription className="font-sans text-sm">
-            Please try again or email us directly.
+            {t("errorMessage")}
           </AlertDescription>
         </Alert>
       )}
@@ -88,14 +82,14 @@ export function ConsultationForm() {
       {/* Parent info */}
       <fieldset className="flex flex-col gap-5">
         <legend className="font-heading text-base font-semibold text-foreground">
-          Parent / Guardian
+          {t("parentGuardianLegend")}
         </legend>
 
         <div className="flex flex-col gap-1.5">
-          <Label htmlFor="parentName">Name</Label>
+          <Label htmlFor="parentName">{t("parentNameLabel")}</Label>
           <Input
             id="parentName"
-            placeholder="Jane Smith"
+            placeholder={t("parentNamePlaceholder")}
             autoComplete="name"
             aria-invalid={!!errors.parentName}
             aria-describedby={errors.parentName ? "parentName-error" : undefined}
@@ -108,11 +102,11 @@ export function ConsultationForm() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="parentEmail">Email Address</Label>
+            <Label htmlFor="parentEmail">{t("parentEmailLabel")}</Label>
             <Input
               id="parentEmail"
               type="email"
-              placeholder="jane@example.com"
+              placeholder={t("parentEmailPlaceholder")}
               autoComplete="email"
               spellCheck={false}
               aria-invalid={!!errors.parentEmail}
@@ -125,12 +119,12 @@ export function ConsultationForm() {
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="parentPhone">Phone Number</Label>
+            <Label htmlFor="parentPhone">{t("parentPhoneLabel")}</Label>
             <Input
               id="parentPhone"
               type="tel"
               inputMode="tel"
-              placeholder="(555) 123-4567"
+              placeholder={t("parentPhonePlaceholder")}
               autoComplete="tel"
               aria-invalid={!!errors.parentPhone}
               aria-describedby={errors.parentPhone ? "parentPhone-error" : undefined}
@@ -146,15 +140,15 @@ export function ConsultationForm() {
       {/* Child info */}
       <fieldset className="flex flex-col gap-5">
         <legend className="font-heading text-base font-semibold text-foreground">
-          Child
+          {t("childLegend")}
         </legend>
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="childName">Child&apos;s Name</Label>
+            <Label htmlFor="childName">{t("childNameLabel")}</Label>
             <Input
               id="childName"
-              placeholder="Alex"
+              placeholder={t("childNamePlaceholder")}
               aria-invalid={!!errors.childName}
               aria-describedby={errors.childName ? "childName-error" : undefined}
               {...register("childName")}
@@ -165,19 +159,19 @@ export function ConsultationForm() {
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="childGrade">Current Grade</Label>
+            <Label htmlFor="childGrade">{t("childGradeLabel")}</Label>
             <Select onValueChange={(val) => setValue("childGrade", val as ConsultationInput["childGrade"], { shouldValidate: true })}>
               <SelectTrigger
                 id="childGrade"
                 aria-invalid={!!errors.childGrade}
                 aria-describedby={errors.childGrade ? "childGrade-error" : undefined}
               >
-                <SelectValue placeholder="Select a grade" />
+                <SelectValue placeholder={t("childGradePlaceholder")} />
               </SelectTrigger>
               <SelectContent>
-                {GRADES.map(({ value, label }) => (
-                  <SelectItem key={value} value={value}>
-                    {label}
+                {GRADE_KEYS.map((key) => (
+                  <SelectItem key={key} value={key}>
+                    {t(`grades.${key}`)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -192,13 +186,13 @@ export function ConsultationForm() {
       {/* Optional message */}
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="message">
-          Anything else we should know?{" "}
-          <span className="text-muted-foreground">(optional)</span>
+          {t("messageLabel")}{" "}
+          <span className="text-muted-foreground">{t("optionalSuffix")}</span>
         </Label>
         <Textarea
           id="message"
           rows={4}
-          placeholder="Prior Mandarin experience, scheduling constraints, questions…"
+          placeholder={t("messagePlaceholder")}
           {...register("message")}
         />
       </div>
@@ -209,7 +203,7 @@ export function ConsultationForm() {
         className="self-start gap-2 text-sm font-medium"
         size="lg"
       >
-        {status === "submitting" ? "Sending…" : "Send Request"}
+        {status === "submitting" ? t("submitting") : t("submitButton")}
       </Button>
     </form>
   );

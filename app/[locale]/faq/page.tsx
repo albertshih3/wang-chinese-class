@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getTranslations, getLocale } from "next-intl/server";
+import { translateString, translatePortableText } from "@/lib/translate";
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +8,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Link } from "@/i18n/navigation";
+import { PortableText } from "@portabletext/react";
+import type { PortableTextBlock } from "@portabletext/types";
+import { sanityFetch } from "@/lib/sanity";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -13,95 +18,155 @@ export const metadata: Metadata = {
     "Common questions from families about Wang Laoshi's Mandarin Chinese classes.",
 };
 
-// TODO: Phase 3 — replace with Sanity faq documents
-const faqs = [
+const FAQS_QUERY = `
+  *[_type == "faq" && isPublished == true]
+  | order(order asc) {
+    _id,
+    question,
+    answer
+  }
+`;
+
+interface FaqEntry {
+  _id: string;
+  question: string;
+  answer: PortableTextBlock[];
+}
+
+// Static fallback used before Sanity is seeded
+const FALLBACK_FAQS = [
   {
-    id: "age-range",
+    _id: "age-range",
     question: "What ages or grades do you teach?",
-    answer:
+    answer: null,
+    plainAnswer:
       "Classes are designed for students in Kindergarten through 5th grade (ages 5–11). If your child falls outside this range, reach out and we'll discuss whether a good fit exists.",
   },
   {
-    id: "schedule",
+    _id: "schedule",
     question: "When are classes held?",
-    answer:
+    answer: null,
+    plainAnswer:
       "Classes run on either Saturday or Sunday mornings from 9:00 AM to 12:00 PM — one session per week. Which day depends on your child's group; details are confirmed after enrollment.",
   },
   {
-    id: "prior-experience",
+    _id: "prior-experience",
     question: "Does my child need prior Mandarin experience?",
-    answer:
+    answer: null,
+    plainAnswer:
       "No. We welcome complete beginners as well as heritage learners who have some exposure at home. During the consultation, we'll assess your child's level and place them in the right group.",
   },
   {
-    id: "class-size",
+    _id: "class-size",
     question: "How many students are in each class?",
-    answer:
+    answer: null,
+    plainAnswer:
       "Class sizes are intentionally kept very small — around 4 students per group — so every child receives meaningful individual attention and the environment stays warm and focused.",
   },
   {
-    id: "enrollment",
+    _id: "enrollment",
     question: "How do I enroll?",
-    answer:
+    answer: null,
+    plainAnswer:
       "Start by filling out the consultation request form on the Contact page. Wang Laoshi will follow up within 2 business days to answer your questions and, if it's a good fit, walk you through the next steps.",
   },
   {
-    id: "zoom",
+    _id: "zoom",
     question: "Are classes in-person or online?",
-    answer:
+    answer: null,
+    plainAnswer:
       "Classes are held online via Zoom. The recurring meeting link is shared with enrolled families and can be accessed from the Classes page after you sign in.",
   },
   {
-    id: "materials",
+    _id: "materials",
     question: "What materials or supplies are needed?",
-    answer:
+    answer: null,
+    plainAnswer:
       "Students use a textbook that families will need to purchase — it's affordable and a one-time cost. All other materials are provided digitally through Google Classroom. A device with a camera and stable internet connection is required for Zoom.",
   },
   {
-    id: "payment",
+    _id: "payment",
     question: "How does payment work?",
-    answer:
+    answer: null,
+    plainAnswer:
       "Tuition is paid on a per-class basis, giving families maximum flexibility. We currently accept payment via Zelle. Payment details are discussed during the consultation.",
   },
   {
-    id: "progress",
+    _id: "progress",
     question: "How will I know how my child is progressing?",
-    answer:
+    answer: null,
+    plainAnswer:
       "Wang Laoshi provides regular progress updates and is always available to chat. You'll also see your child's work and assignments through Google Classroom. There are no formal grades — the focus is on growth and confidence.",
   },
 ];
 
-export default function FaqPage() {
+export default async function FaqPage() {
+  const [t, locale] = await Promise.all([
+    getTranslations("faq"),
+    getLocale(),
+  ]);
+
+  let faqs: FaqEntry[] = [];
+  let useFallback = false;
+
+  try {
+    const raw = await sanityFetch<FaqEntry[]>(FAQS_QUERY);
+    if (!raw || raw.length === 0) {
+      useFallback = true;
+    } else {
+      faqs = await Promise.all(
+        raw.map(async (entry) => ({
+          ...entry,
+          question: await translateString(entry.question, locale),
+          answer: await translatePortableText(entry.answer, locale),
+        }))
+      );
+    }
+  } catch {
+    useFallback = true;
+  }
+
   return (
-    <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
+    <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20 animate-fade-up">
       {/* Page header */}
       <div className="mb-10">
         <p className="font-sans text-xs font-semibold uppercase tracking-widest text-primary">
-          FAQ
+          {t("eyebrow")}
         </p>
         <h1 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Frequently Asked Questions
+          {t("title")}
         </h1>
         <p className="mt-3 font-sans text-sm leading-relaxed text-muted-foreground">
-          Everything families want to know before enrolling. Don&rsquo;t see
-          your question?{" "}
+          {t("subtitle")}{" "}
+          {t("noQuestionPrefix")}{" "}
           <Link href="/contact" className="text-primary hover:underline">
-            Reach out directly.
+            {t("reachOutLink")}
           </Link>
         </p>
       </div>
 
       <Accordion type="single" collapsible className="w-full">
-        {faqs.map(({ id, question, answer }) => (
-          <AccordionItem key={id} value={id}>
-            <AccordionTrigger className="font-heading text-left text-sm font-medium text-foreground">
-              {question}
-            </AccordionTrigger>
-            <AccordionContent className="font-sans text-sm leading-relaxed text-muted-foreground">
-              {answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
+        {useFallback
+          ? FALLBACK_FAQS.map(({ _id, question, plainAnswer }) => (
+              <AccordionItem key={_id} value={_id}>
+                <AccordionTrigger className="font-heading text-left text-sm font-medium text-foreground">
+                  {question}
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-sm leading-relaxed text-muted-foreground">
+                  {plainAnswer}
+                </AccordionContent>
+              </AccordionItem>
+            ))
+          : faqs.map(({ _id, question, answer }) => (
+              <AccordionItem key={_id} value={_id}>
+                <AccordionTrigger className="font-heading text-left text-sm font-medium text-foreground">
+                  {question}
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-sm leading-relaxed text-muted-foreground">
+                  <PortableText value={answer} />
+                </AccordionContent>
+              </AccordionItem>
+            ))}
       </Accordion>
     </div>
   );

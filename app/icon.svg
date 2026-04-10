@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="oklch(0.505 0.213 27.518)"/>
+  <text
+    x="16"
+    y="23"
+    font-family="serif"
+    font-size="20"
+    font-weight="700"
+    text-anchor="middle"
+    fill="oklch(0.971 0.013 17.38)"
+  >學</text>
+</svg>

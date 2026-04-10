@@ -1,21 +1,20 @@
-const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "Wang Laoshi";
+import { getTranslations } from "next-intl/server";
 
-export function SiteFooter() {
-  // Computed inside the function so it reflects the actual request year,
-  // not the build-time year baked into static HTML.
+export async function SiteFooter({ siteName = "Wang Laoshi" }: { siteName?: string }) {
+  const t = await getTranslations("footer");
   const year = new Date().getFullYear();
 
   return (
     <footer className="mt-auto border-t border-border/60">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-4 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
         <div>
-          <p className="font-heading text-sm font-medium text-foreground">{SITE_NAME}</p>
+          <p className="font-heading text-sm font-medium text-foreground">{siteName}</p>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            Mandarin Chinese classes for K–5 learners.
+            {t("tagline")}
           </p>
         </div>
         <p className="text-xs text-muted-foreground">
-          © {year} {SITE_NAME}. All rights reserved.
+          © {year} {siteName}. {t("copyright")}
         </p>
       </div>
     </footer>
