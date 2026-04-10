@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于老师",
+    "faq": "常见问题",
+    "contact": "预约咨询",
+    "classes": "我的课程",
+    "signIn": "登录",
+    "signOut": "退出",
+    "languageLabel": "语言",
+    "myAccount": "我的账号"
+  },
+  "home": {
+    "headline": "为年轻学习者打造的普通话中文课",
+    "subheadline": "小班制、温暖的社群，以及让学习感觉像回家一样的老师。",
+    "cta": "预约咨询",
+    "teacherTeaserLabel": "认识老师",
+    "learnMore": "进一步了解王老师",
+    "readyHeading": "准备好开始了吗？",
+    "readyBody": "填写一份简短的表格，我们将在 2 个工作日内与您联系解答问题。",
+    "features": {
+      "smallClass": {
+        "title": "小班制教学",
+        "body": "亲密的小组环境，每位孩子都能获得个别关注。"
+      },
+      "weekend": {
+        "title": "周末课程",
+        "body": "周六或周日上午 9 点至 12 点，每周一次，专为繁忙家庭设计。"
+      },
+      "curriculum": {
+        "title": "K–5 课程",
+        "body": "适龄教学，在建立词汇的同时培养学习自信。"
+      }
+    }
+  },
+  "about": {
+    "title": "关于王老师",
+    "eyebrow": "关于",
+    "bioHeading": "用心教学",
+    "bioSubheading": "一生的教学热情",
+    "credentialsHeading": "资历与经验",
+    "educationHeading": "学历与经历",
+    "philosophyHeading": "教学理念",
+    "specialtiesHeading": "专长",
+    "textbooksLabel": "使用教材"
+  },
+  "faq": {
+    "title": "常见问题",
+    "eyebrow": "常见问题",
+    "subtitle": "家长在报名前最常问的问题。",
+    "noQuestionPrefix": "没有看到您的问题？",
+    "reachOutLink": "直接联系我们。"
+  },
+  "contact": {
+    "title": "预约咨询",
+    "eyebrow": "联系我们",
+    "subtitle": "告诉我们您的家庭情况，我们将在 2 个工作日内与您联系。",
+    "subtitleFull": "请填写以下表格，王老师将在 2 个工作日内与您联系。无需任何承诺。",
+    "parentNameLabel": "家长姓名",
+    "parentNamePlaceholder": "王小明",
+    "parentEmailLabel": "电子邮件",
+    "parentEmailPlaceholder": "example@email.com",
+    "parentPhoneLabel": "电话号码",
+    "parentPhonePlaceholder": "(02) 1234-5678",
+    "childNameLabel": "孩子姓名",
+    "childNamePlaceholder": "小明",
+    "childGradeLabel": "目前年级",
+    "childGradePlaceholder": "选择年级",
+    "messageLabel": "其他备注",
+    "optionalSuffix": "（选填）",
+    "messagePlaceholder": "中文学习经验、时间限制、其他问题…",
+    "parentGuardianLegend": "家长 / 监护人",
+    "childLegend": "孩子",
+    "submitButton": "发送申请",
+    "submitting": "发送中…",
+    "successTitle": "申请已收到！",
+    "successMessage": "谢谢您！王老师将在 2 个工作日内与您联系。",
+    "errorTitle": "发生错误",
+    "errorMessage": "请再试一次或直接发送电子邮件给我们。",
+    "grades": {
+      "k": "幼儿园",
+      "1": "一年级",
+      "2": "二年级",
+      "3": "三年级",
+      "4": "四年级",
+      "5": "五年级",
+      "6plus": "六年级或以上"
+    }
+  },
+  "classes": {
+    "title": "课程时间表",
+    "eyebrow": "已报名家庭",
+    "subtitle": "欢迎回来！以下是您的课程详情。",
+    "description": "每周六及周日均有课程。请使用以下链接加入 Zoom 并访问 Google Classroom。",
+    "zoomLabel": "加入 Zoom",
+    "joinZoom": "加入 Zoom 课程",
+    "classroomLabel": "打开 Google Classroom",
+    "openClassroom": "打开 Google Classroom",
+    "scheduleHeading": "每周课程表",
+    "saturdayLabel": "星期六",
+    "sundayLabel": "星期日",
+    "timeRange": "上午 9:00 – 下午 12:00",
+    "weeklyBadge": "每周",
+    "period1": "第一节",
+    "period2": "第二节",
+    "break": "休息"
+  },
+  "banner": {
+    "dismiss": "关闭",
+    "dismissAriaLabel": "关闭公告"
+  },
+  "auth": {
+    "signInTitle": "登录",
+    "signInPrompt": "请登录以查看课程时间表和资源。"
+  },
+  "footer": {
+    "tagline": "为 K–5 学生提供普通话中文课程。",
+    "copyright": "王老师中文班。版权所有。"
+  },
+  "common": {
+    "loading": "加载中…",
+    "back": "返回",
+    "learnMore": "了解更多"
+  }
+}
