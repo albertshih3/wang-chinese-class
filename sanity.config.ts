@@ -21,6 +21,14 @@ export default defineConfig({
           .items([
             // Singletons — directly open (no document list)
             S.listItem()
+              .title("Home Page")
+              .id("homePage")
+              .child(
+                S.document()
+                  .schemaType("homePage")
+                  .documentId("homePage")
+              ),
+            S.listItem()
               .title("Site Settings")
               .id("siteSettings")
               .child(
